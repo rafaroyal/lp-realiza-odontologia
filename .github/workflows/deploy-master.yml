@@ -1,0 +1,24 @@
+name: Deploy Main github com action
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Deploy-main para servidor Realiza Odontologia
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout do repositorio
+      uses: actions/checkout@v2
+      #with:
+      #  fetch-depth: 0 # buscar todo o histórico de todas as ramificações e tags.
+    - name: Deploy para pasta Realiza Odontologia
+      uses: easingthemes/ssh-deploy@main
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        ARGS: "-avzr" #ARGS: "-rltgoDzvO -u"
+        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+        REMOTE_USER: ${{ secrets.REMOTE_USER }}
+        TARGET: ${{ secrets.REMOTE_TARGET_LP_REALIZA_ODONTOLOGIA_BKP }}
+        # EXCLUDE: "/arquivos/, /assets/, /b/, /boletos/, /cielo/, /condicoes_gerais/, /email/, /imagens/, /inc/, .htaccess, /.git/"
