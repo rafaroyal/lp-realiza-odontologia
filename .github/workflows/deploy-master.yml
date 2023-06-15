@@ -20,5 +20,5 @@ jobs:
         ARGS: "-avzr" #ARGS: "-avzr"
         REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        TARGET: ${{ secrets.REMOTE_TARGET_LP_REALIZA_ODONTOLOGIA_BKP }}
+        TARGET: ${{ secrets.REMOTE_TARGET_LP_REALIZA_ODONTOLOGIA }}
         # EXCLUDE: "/arquivos/, /assets/, /b/, /boletos/, /cielo/, /condicoes_gerais/, /email/, /imagens/, /inc/, .htaccess, /.git/"
